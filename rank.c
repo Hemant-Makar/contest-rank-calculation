@@ -2,11 +2,9 @@
 //#include<conio.h>
 
 void displayData(int *data, int count) {
-    printf("\n*******************displayData*******************************\n");
     for(int i = 0; i < count; i++){
         printf("%d,", data[i]);
     }
-    printf("\n*********************displayData*****************************\n");
 }
 
 void sort(int *points, int count) {
@@ -42,13 +40,24 @@ int main(int argc, char **argv) {
         printf("Enter elements at points[%d]:", i);
         scanf("%d", &points[i]);
     }
+    printf("\n******************* Input Data *******************************\n");
+    displayData(points, n);
     
+    printf("\n******************* Sort Input Data *******************************\n");
+    //Sort the input data array
     sort(points, n);
+    
     displayData(points, n);
     
     int ranks[n];
-    calculateRank(points, ranks, n);
-    displayData(ranks, n);
     
+    //calculate the rank using sorted array
+    calculateRank(points, ranks, n);
+    
+    printf("\n******************* Display Rank Data *******************************\n");
+    //Display the rank
+    displayData(ranks, n);
+    printf("\n");
+
     return 0;
 }
