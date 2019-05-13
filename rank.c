@@ -1,5 +1,5 @@
 #include<stdio.h>
-//#include<conio.h>
+
 
 void displayData(int *data, int count) {
     for(int i = 0; i < count; i++){
